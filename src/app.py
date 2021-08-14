@@ -10,24 +10,24 @@ todos = [
     { "label": "My second task", "done": False }
 ]
 
-@app.route('/todos', methods=['GET'])
+@app.route('/marcoescmont', methods=['GET'])
 def hello_world():
     return jsonify(todos)
 
-@app.route('/todos', methods=['POST'])
+@app.route('/marcoescmont', methods=['POST'])
 def add_new_todo():
     request_body = json.loads(request.data)
     todos.append(request_body)
     return jsonify(todos)
 
-@app.route('/todos', methods=['PUT'])
+@app.route('/marcoescmont', methods=['PUT'])
 def update_todo():
     global todos
     incoming_todos = json.loads(request.data)
     todos = incoming_todos
     return jsonify(todos)
 
-@app.route('/todos/<int:position>', methods=['DELETE'])
+@app.route('/marcoescmont/<int:position>', methods=['DELETE'])
 def delete_todo(position):
     del todos[position]
     return jsonify(todos)
